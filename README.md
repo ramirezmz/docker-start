@@ -82,3 +82,7 @@ Ele nos deve retornar o ID do container
 `docker start monguito`
 
 ## Port mapping
+
+## Dockerfile
+
+El archivo Dockerfile sirve para crear la configuracion de nuestra imagen.

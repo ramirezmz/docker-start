@@ -61,4 +61,24 @@ Ele nos deve retornar o ID do container
 - Follow logs by terminal
   `docker log --follow monguito`
 
+- Rodar algun docker
+  `docker run nome_do_docker`
+
+  Si deseamos usar nuevamente el docker, podemos adicionar `-D` al comando de `docker run -D nome_do_docker`
+
+- Rodar una imagen que creamos
+  `docker run --name monguito -p27017:27017 -d mongo`
+
+- Remover docker
+  `docker rm nome_docker`
+
+## Creando una imagen docker para nuestra aplicacion
+
+`docker pull mongo`
+
+`docker create -p27017:27017 --name monguito -e MONGO_INITDB_ROOT_USERNAME=nico -e MONGO_INITDB_ROOT_PASSWORD=password mongo`
+
+`docker ps`
+`docker start monguito`
+
 ## Port mapping

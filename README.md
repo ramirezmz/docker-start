@@ -86,3 +86,61 @@ Ele nos deve retornar o ID do container
 ## Dockerfile
 
 El archivo Dockerfile sirve para crear la configuracion de nuestra imagen.
+
+## Como crear una red
+
+Create a red
+`docker network create mired`
+
+Delete a red
+`docker network rm mired`
+
+List all reds
+`docker network ls`
+
+Montar uma imagen docker a partir de um Dockerfile
+`docker build -t nombreDeLaImagen:1 rutaDelProjectoDockerfile`
+
+levantar docker com compose
+
+`docker compose up`
+
+Remover docker compose e limpar
+
+`docker compose down`
+
+### Usando MongoDB + node18
+
+Levantar MongoDB
+`docker create -p27017:27017 --name monguito --network mired -e MONGO_INITDB_ROOT_USERNAME=nico MONGO_INITDB_ROOT_PASSWORD=password mongo`
+
+Levantar NodeJS e apontar para nossa red
+`docker create -p3000:3000 --name chanchito --network mired myapp:1`
+
+Depois, startar as duas, começando pelo DB
+`docker start monguito`
+`docker start chanchito`
+
+Docker compose levantar
+`docker compose up`
+Docker compose limpar e remover dados
+`docker compose down`
+
+## Recapitulando
+
+Docker conteiners:
+
+- Descargar imagen
+- Crear una red
+- Crear contenedor
+  - asignar puertos
+  - Asignar nombre
+  - Asignar variables de entorno
+  - Especificar red
+  - Indicar imagen:etiqueta
+
+Todo eso para cada contenedor.
+
+OBS.
+chanchito es nuestra app
+monguito es nuestro DB

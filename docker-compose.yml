@@ -13,3 +13,9 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=nico
       - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - mongo-data:/data/db
+      # mysql -> /var/lib/mysql
+      # portgres -> /var/lib/postgresql/data
+volumes:
+  mongo-data:

@@ -144,3 +144,11 @@ Todo eso para cada contenedor.
 OBS.
 chanchito es nuestra app
 monguito es nuestro DB
+
+## VOLUMES
+
+Tipos:
+
+- Anonimo: solo indicas la ruta
+- De anfitrion o host: tu decides que carpeta montar y usar
+- Nombrado
